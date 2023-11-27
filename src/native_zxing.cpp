@@ -16,7 +16,7 @@ extern "C"
 {
     void resultToCodeResult(struct CodeResult *code, Result result)
     {   
-        platform_log('resut pre convert=========%s',result.text());
+        platform_log('resut pre convert=========');
         string text = result.text();
         code->text = new char[text.length() + 1];
         strcpy(code->text, text.c_str());
