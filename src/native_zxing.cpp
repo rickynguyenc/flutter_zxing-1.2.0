@@ -82,6 +82,7 @@ extern "C"
         code.pos->imageWidth = width;
         code.pos->imageHeight = height;
         platform_log("Read Barcode in: %d ms\n", code.duration);
+        platform_log("Read pppppppppppppppppp in: %d ms\n", code.duration);
         return code;
     }
 
