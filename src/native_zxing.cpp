@@ -15,7 +15,8 @@ using namespace std;
 extern "C"
 {
     void resultToCodeResult(struct CodeResult *code, Result result)
-    {
+    {   
+        platform_log('resut pre convert=========',result.text());
         string text = result.text();
         code->text = new char[text.length() + 1];
         strcpy(code->text, text.c_str());
@@ -68,7 +69,7 @@ extern "C"
         }
         DecodeHints hints = DecodeHints().setTryHarder(tryHarder).setTryRotate(tryRotate).setFormats(BarcodeFormat(format)).setTryInvert(tryInvert).setReturnErrors(true);
         Result result = ReadBarcode(image, hints);
-
+        
         delete[] bytes;
 
         struct CodeResult code;
@@ -79,6 +80,7 @@ extern "C"
         code.pos->imageWidth = width;
         code.pos->imageHeight = height;
         platform_log("Read Barcode in: %d ms\n", code.duration);
+        platform_log("Read Barcode in: %s ms\n", code.results.elementAt(i).ref.toCode());
         return code;
     }
 
