@@ -98,7 +98,6 @@ extern "C"
 
         int evalInMillis = static_cast<int>(get_now() - start);
         platform_log("Read Barcode in: %d ms\n", evalInMillis);
-        platform_log("Read Barcode in: %d ms\n", evalInMillis);
 
         auto *codes = new struct CodeResult[results.size()];
         int i = 0;
