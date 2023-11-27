@@ -8,6 +8,7 @@
 #include <locale>
 #include <codecvt>
 #include <stdarg.h>
+#include <iostream>
 
 using namespace ZXing;
 using namespace std;
@@ -74,6 +75,7 @@ extern "C"
 
         struct CodeResult code;
         resultToCodeResult(&code, result);
+                std::cout << 'cocde ==================' << code.text << std::endl;
 
         int evalInMillis = static_cast<int>(get_now() - start);
         code.duration = evalInMillis;
