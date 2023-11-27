@@ -80,6 +80,7 @@ extern "C"
         code.pos->imageWidth = width;
         code.pos->imageHeight = height;
         platform_log("Read Barcode in: %d ms\n", code.duration);
+        platform_log("abcde ==================================");
         platform_log("Read Barcode in: %s ms\n", code.results.elementAt(i).ref.toCode());
         return code;
     }
