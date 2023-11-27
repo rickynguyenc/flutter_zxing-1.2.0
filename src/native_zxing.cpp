@@ -16,7 +16,7 @@ extern "C"
 {
     void resultToCodeResult(struct CodeResult *code, Result result)
     {   
-        platform_log('resut pre convert=========',result.text());
+        platform_log('resut pre convert=========%s',result.text());
         string text = result.text();
         code->text = new char[text.length() + 1];
         strcpy(code->text, text.c_str());
@@ -81,8 +81,7 @@ extern "C"
         code.pos->imageHeight = height;
         platform_log("Read Barcode in: %d ms\n", code.duration);
         platform_log("abcde ==================================");
-        platform_log("Read Barcode in: %s ms\n", code.results.elementAt(i).ref.toCode());
-        platform_log("Read Barcode in: %s ms\n", code.results.elementAt(i).ref.toCode());
+        platform_log("code texxt ================================== %s",code.text);
         return code;
     }
 
